@@ -350,34 +350,34 @@ section[data-testid="stSidebar"] * {{
 }}
 
 /* ===== Force hide sidebar on mobile ===== */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {{
 
-    section[data-testid="stSidebar"] {
+    section[data-testid="stSidebar"] {{
         display: none !important;
         visibility: hidden !important;
         width: 0 !important;
         min-width: 0 !important;
         max-width: 0 !important;
-    }
+    }}
 
-    div[data-testid="stSidebarContent"] {
+    div[data-testid="stSidebarContent"] {{
         display: none !important;
-    }
+    }}
 
-    button[kind="header"] {
+    button[kind="header"] {{
         display: none !important;
-    }
+    }}
 
-    .main .block-container {
+    .main .block-container {{
         padding-left: 0.8rem !important;
         padding-right: 0.8rem !important;
         max-width: 100% !important;
-    }
+    }}
 
-    [data-testid="collapsedControl"] {
+    [data-testid="collapsedControl"] {{
         display: none !important;
-    }
-}
+    }}
+}}
 </style>
 """, unsafe_allow_html=True)
 
@@ -545,12 +545,12 @@ page = st.sidebar.radio("التنقل", pages_list)
 mobile_page = st.selectbox("القائمة", pages_list, index=pages_list.index(page))
 
 # Use mobile selection
-page = mobile_page)
+page = mobile_page
 
 # =========================================================
 # Dashboard
 # =========================================================
-if page == "Dashboard الرئيسي":
+if page == "الصفحة الرئيسية | Dashboard":
     st.markdown(f"""
     <div class="neo-header">
         <div class="neo-title">صندوق التوصيل الوطني — لوحة التحكم المركزية</div>
@@ -645,7 +645,7 @@ if page == "Dashboard الرئيسي":
 # =========================================================
 # Register Platform
 # =========================================================
-elif page == "تسجيل منصة":
+elif page == "تسجيل بيانات منصة توصيل":
     st.markdown('<div class="neo-header"><div class="neo-title">تسجيل تقرير منصة توصيل</div><div class="neo-subtitle">نموذج مبسط لإدخال بيانات شهرية واحتساب الرسم تلقائيًا</div></div>', unsafe_allow_html=True)
 
     st.markdown('<div class="panel">', unsafe_allow_html=True)
