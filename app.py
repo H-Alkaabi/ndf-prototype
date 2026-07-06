@@ -148,30 +148,30 @@ hr {{ border-color: rgba(0, 212, 255, 0.14); }}
 .stButton > button:hover {{ border: 0; color: #00111F; filter: brightness(1.08); }}
 
 /* تحسين وضوح حقول الإدخال والقوائم */
-div[data-baseweb="input"], div[data-baseweb="select"] > div {
+div[data-baseweb="input"], div[data-baseweb="select"] > div {{
     background: rgba(234, 247, 255, 0.08) !important;
     border: 1px solid rgba(0, 212, 255, 0.32) !important;
     border-radius: 12px !important;
     color: #EAF7FF !important;
-}
-div[data-baseweb="input"] input, div[data-baseweb="select"] input {
+}}
+div[data-baseweb="input"] input, div[data-baseweb="select"] input {{
     color: #EAF7FF !important;
     -webkit-text-fill-color: #EAF7FF !important;
     font-weight: 700 !important;
-}
-div[data-baseweb="select"] span, div[data-baseweb="select"] div {
+}}
+div[data-baseweb="select"] span, div[data-baseweb="select"] div {{
     color: #EAF7FF !important;
-}
-input[type="number"] {
+}}
+input[type="number"] {{
     color: #EAF7FF !important;
     -webkit-text-fill-color: #EAF7FF !important;
     direction: ltr !important;
     text-align: right !important;
-}
-label, .stTextInput label, .stNumberInput label, .stSelectbox label {
+}}
+label, .stTextInput label, .stNumberInput label, .stSelectbox label {{
     color: #B9D9FF !important;
     font-weight: 700 !important;
-}
+}}
 
 .muted {{ color: #8DAFD3; font-size: 13px; }}
 code {{ direction: ltr; text-align: left; }}
