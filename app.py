@@ -146,7 +146,209 @@ div[data-testid="stRadio"] label {{
 hr {{ border-color: rgba(0, 212, 255, 0.14); }}
 .stButton > button {{ background: linear-gradient(90deg, {BLUE}, {CYAN}); color: #00111F; border: 0; border-radius: 12px; font-weight: 800; padding: 0.55rem 1rem; }}
 .stButton > button:hover {{ border: 0; color: #00111F; filter: brightness(1.08); }}
+
+/* تحسين وضوح حقول الإدخال والقوائم */
+div[data-baseweb="input"], div[data-baseweb="select"] > div {
+    background: rgba(234, 247, 255, 0.08) !important;
+    border: 1px solid rgba(0, 212, 255, 0.32) !important;
+    border-radius: 12px !important;
+    color: #EAF7FF !important;
+}
+div[data-baseweb="input"] input, div[data-baseweb="select"] input {
+    color: #EAF7FF !important;
+    -webkit-text-fill-color: #EAF7FF !important;
+    font-weight: 700 !important;
+}
+div[data-baseweb="select"] span, div[data-baseweb="select"] div {
+    color: #EAF7FF !important;
+}
+input[type="number"] {
+    color: #EAF7FF !important;
+    -webkit-text-fill-color: #EAF7FF !important;
+    direction: ltr !important;
+    text-align: right !important;
+}
+label, .stTextInput label, .stNumberInput label, .stSelectbox label {
+    color: #B9D9FF !important;
+    font-weight: 700 !important;
+}
+
+.muted {{ color: #8DAFD3; font-size: 13px; }}
 code {{ direction: ltr; text-align: left; }}
+
+
+/* =========================
+   Mobile Responsive Fix
+   ========================= */
+.desktop-only {{ display: inline; }}
+.mobile-only {{ display: none; }}
+section[data-testid="stSidebar"] * {{
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+}}
+
+@media only screen and (max-width: 768px) {{
+    .block-container {{
+        padding-left: 0.65rem !important;
+        padding-right: 0.65rem !important;
+        padding-top: 0.6rem !important;
+        max-width: 100% !important;
+    }}
+
+    section[data-testid="stSidebar"] {{
+        width: 17rem !important;
+        min-width: 17rem !important;
+        max-width: 17rem !important;
+    }}
+
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
+    section[data-testid="stSidebar"] h3,
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] span,
+    section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] div {{
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        line-height: 1.5 !important;
+    }}
+
+    .desktop-only {{ display: none !important; }}
+    .mobile-only {{ display: inline !important; }}
+
+    .neo-header {{
+        padding: 16px 14px !important;
+        border-radius: 18px !important;
+        margin-bottom: 12px !important;
+        overflow: hidden !important;
+    }}
+
+    .neo-title {{
+        font-size: 26px !important;
+        line-height: 1.45 !important;
+        letter-spacing: 0 !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+    }}
+
+    .neo-subtitle {{
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+    }}
+
+    .chip {{
+        display: inline-block !important;
+        font-size: 11px !important;
+        padding: 4px 9px !important;
+        margin-left: 4px !important;
+        margin-top: 7px !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+    }}
+
+    .panel {{
+        min-height: auto !important;
+        padding: 14px !important;
+        margin-bottom: 12px !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+    }}
+
+    .panel-title {{
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+    }}
+
+    .panel-value {{
+        font-size: 28px !important;
+        line-height: 1.25 !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+    }}
+
+    .panel-note {{
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }}
+
+    .mini-grid {{
+        grid-template-columns: 1fr !important;
+    }}
+
+    .mini-value {{
+        font-size: 21px !important;
+    }}
+
+    .timeline {{
+        display: block !important;
+    }}
+
+    .timeline-item {{
+        width: 100% !important;
+        min-height: auto !important;
+        margin-bottom: 10px !important;
+    }}
+
+    div[data-testid="column"] {{
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }}
+
+    [data-testid="stHorizontalBlock"] {{
+        gap: 0.6rem !important;
+        flex-wrap: wrap !important;
+    }}
+
+    [data-testid="stMetric"] {{
+        min-width: 100% !important;
+        padding: 12px !important;
+    }}
+
+    [data-testid="stMetricValue"] div {{
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+    }}
+
+    [data-testid="stMetricLabel"] div {{
+        font-size: 12px !important;
+    }}
+
+    div[data-baseweb="input"], div[data-baseweb="select"] > div {{
+        min-height: 44px !important;
+        font-size: 14px !important;
+    }}
+
+    div[data-baseweb="input"] input,
+    div[data-baseweb="select"] input,
+    input[type="number"] {{
+        font-size: 14px !important;
+        min-height: 38px !important;
+    }}
+
+    .stDataFrame, [data-testid="stDataFrame"] {{
+        overflow-x: auto !important;
+        max-width: 100% !important;
+    }}
+
+    iframe {{
+        max-width: 100% !important;
+    }}
+
+    h1 {{ font-size: 28px !important; line-height: 1.4 !important; }}
+    h2 {{ font-size: 23px !important; line-height: 1.4 !important; }}
+    h3 {{ font-size: 19px !important; line-height: 1.4 !important; }}
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -290,8 +492,8 @@ platform_count = df["platform_name"].nunique()
 # =========================================================
 # Sidebar
 # =========================================================
-st.sidebar.markdown("## National Delivery Fund")
-st.sidebar.markdown("<span class='muted'>Prototype v3 — Smart Fund Console</span>", unsafe_allow_html=True)
+st.sidebar.markdown("## صندوق التوصيل")
+st.sidebar.markdown("<span class='muted'>Prototype v3</span>", unsafe_allow_html=True)
 st.sidebar.markdown("---")
 
 page = st.sidebar.radio("القائمة", [
@@ -406,34 +608,64 @@ if page == "Dashboard الرئيسي":
 # Register Platform
 # =========================================================
 elif page == "تسجيل منصة":
-    st.markdown('<div class="neo-header"><div class="neo-title">تسجيل بيانات منصة توصيل</div><div class="neo-subtitle">إدخال تقرير شهري واحتساب الرسم والمؤشرات تلقائيًا</div></div>', unsafe_allow_html=True)
-    a,b,c = st.columns(3)
+    st.markdown('<div class="neo-header"><div class="neo-title">تسجيل تقرير منصة توصيل</div><div class="neo-subtitle">نموذج مبسط لإدخال بيانات شهرية واحتساب الرسم تلقائيًا</div></div>', unsafe_allow_html=True)
+
+    st.markdown('<div class="panel">', unsafe_allow_html=True)
+    st.markdown("### بيانات التقرير")
+
+    a, b = st.columns(2)
     with a:
-        platform_name = st.text_input("اسم المنصة", "منصة تجريبية")
-        month_input = st.selectbox("الشهر", sorted(df["month_label"].unique()))
+        platform_name = st.text_input("اسم المنصة", value="منصة تجريبية", help="مثال: Talabat أو Deliveroo أو Careem")
         emirate_input = st.selectbox("الإمارة", sorted(df["emirate"].unique()))
+        completed = st.number_input("الطلبات المكتملة", min_value=0, value=100000, step=1000, help="عدد الطلبات التي وصلت للعميل وتم إغلاقها كمكتملة")
+        violations = st.number_input("المخالفات", min_value=0, value=80, step=1, help="عدد المخالفات المسجلة على المنصة/السائقين خلال الشهر")
     with b:
-        area_input = st.text_input("المنطقة", "منطقة تجريبية")
-        completed = st.number_input("الطلبات المكتملة", min_value=0, value=100000, step=1000)
+        month_input = st.selectbox("الشهر", sorted(df["month_label"].unique()))
+        area_input = st.text_input("المنطقة", value="منطقة تجريبية")
         cancelled = st.number_input("الطلبات الملغاة", min_value=0, value=4000, step=500)
-    with c:
-        drivers = st.number_input("السائقون النشطون", min_value=0, value=450, step=10)
-        violations = st.number_input("المخالفات", min_value=0, value=80, step=1)
         accidents = st.number_input("الحوادث", min_value=0, value=3, step=1)
-        payment_status = st.selectbox("حالة السداد", ["Paid", "Pending", "Late"])
+
+    drivers = st.number_input("السائقون النشطون", min_value=0, value=450, step=10)
+    payment_status = st.selectbox("حالة السداد", ["Paid", "Pending", "Late"], help="Paid = تم السداد، Pending = قيد المتابعة، Late = متأخر")
+    st.markdown('</div>', unsafe_allow_html=True)
 
     fee_due = completed
     collected = fee_due if payment_status == "Paid" else 0
-    risk = (accidents*5) + violations + round(completed/100000,2)
-    completion = completed / max(completed+cancelled, 1) * 100
-    k1,k2,k3,k4 = st.columns(4)
+    uncollected = fee_due - collected
+    risk = (accidents * 5) + violations + round(completed / 100000, 2)
+    completion = completed / max(completed + cancelled, 1) * 100
+
+    k1, k2, k3, k4 = st.columns(4)
     with k1: kpi_card("الرسم المستحق", f"{fee_due:,.0f}", "درهم", GOLD)
     with k2: kpi_card("المبلغ المحصل", f"{collected:,.0f}", "درهم", GREEN)
-    with k3: kpi_card("نسبة الإكمال", f"{completion:.1f}%", "تشغيلي", CYAN)
+    with k3: kpi_card("المبلغ غير المحصل", f"{uncollected:,.0f}", "درهم", RED if uncollected > 0 else GREEN)
     with k4: kpi_card("مؤشر الخطر", f"{risk:.2f}", "تجريبي", RED if risk > 100 else GOLD)
+
+    st.markdown('<div class="panel">', unsafe_allow_html=True)
+    st.markdown("### طريقة الحساب")
+    calc_df = pd.DataFrame({
+        "البند": ["الرسم", "نسبة الإكمال", "مؤشر الخطر"],
+        "طريقة الحساب": [
+            "الطلبات المكتملة × 1 درهم",
+            "الطلبات المكتملة ÷ (الطلبات المكتملة + الطلبات الملغاة)",
+            "الحوادث × 5 + المخالفات + (الطلبات المكتملة ÷ 100000)"
+        ],
+        "النتيجة": [f"{fee_due:,.0f} درهم", f"{completion:.1f}%", f"{risk:.2f}"]
+    })
+    st.dataframe(calc_df, use_container_width=True, hide_index=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+
     if st.button("عرض التقرير"):
-        report = pd.DataFrame({"الحقل": ["المنصة","الشهر","الإمارة","المنطقة","الطلبات المكتملة","الطلبات الملغاة","السائقون","المخالفات","الحوادث","السداد","الرسم"],
-                               "القيمة": [platform_name, month_input, emirate_input, area_input, completed, cancelled, drivers, violations, accidents, payment_status, fee_due]})
+        report = pd.DataFrame({
+            "الحقل": [
+                "المنصة", "الشهر", "الإمارة", "المنطقة", "الطلبات المكتملة", "الطلبات الملغاة",
+                "السائقون", "المخالفات", "الحوادث", "حالة السداد", "الرسم المستحق", "المبلغ المحصل", "مؤشر الخطر"
+            ],
+            "القيمة": [
+                platform_name, month_input, emirate_input, area_input, f"{completed:,.0f}", f"{cancelled:,.0f}",
+                f"{drivers:,.0f}", f"{violations:,.0f}", f"{accidents:,.0f}", payment_status, f"{fee_due:,.0f} درهم", f"{collected:,.0f} درهم", f"{risk:.2f}"
+            ]
+        })
         st.dataframe(report, use_container_width=True, hide_index=True)
 
 # =========================================================
