@@ -11,7 +11,7 @@ st.set_page_config(
     page_title="National Delivery Fund | Prototype v3",
     page_icon="NDF",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 BG = "#06111F"
@@ -349,6 +349,35 @@ section[data-testid="stSidebar"] * {{
     h3 {{ font-size: 19px !important; line-height: 1.4 !important; }}
 }}
 
+/* ===== Force hide sidebar on mobile ===== */
+@media only screen and (max-width: 768px) {
+
+    section[data-testid="stSidebar"] {
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        max-width: 0 !important;
+    }
+
+    div[data-testid="stSidebarContent"] {
+        display: none !important;
+    }
+
+    button[kind="header"] {
+        display: none !important;
+    }
+
+    .main .block-container {
+        padding-left: 0.8rem !important;
+        padding-right: 0.8rem !important;
+        max-width: 100% !important;
+    }
+
+    [data-testid="collapsedControl"] {
+        display: none !important;
+    }
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -496,9 +525,9 @@ st.sidebar.markdown("## صندوق التوصيل")
 st.sidebar.markdown("<span class='muted'>Prototype v3</span>", unsafe_allow_html=True)
 st.sidebar.markdown("---")
 
-page = st.sidebar.radio("القائمة", [
-    "Dashboard الرئيسي",
-    "تسجيل منصة",
+pages_list = [
+    "الصفحة الرئيسية | Dashboard",
+    "تسجيل بيانات منصة توصيل",
     "التحصيل والامتثال",
     "توزيع الإيرادات",
     "مؤشر المخاطر",
@@ -507,7 +536,16 @@ page = st.sidebar.radio("القائمة", [
     "الحوكمة وحماية السائقين",
     "خارطة التنفيذ",
     "الكاميرات قريبًا"
-])
+]
+
+# Sidebar for desktop
+page = st.sidebar.radio("التنقل", pages_list)
+
+# Mobile navigation inside page
+mobile_page = st.selectbox("القائمة", pages_list, index=pages_list.index(page))
+
+# Use mobile selection
+page = mobile_page)
 
 # =========================================================
 # Dashboard
